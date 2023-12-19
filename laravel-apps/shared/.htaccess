@@ -1,0 +1,29 @@
+Options -indexes
+Deny from all
+
+
+
+#RewriteEngine On
+
+#RewriteLog "/var/log/apache2/rewrite.log"
+#RewriteLogLevel 3
+
+# for application1
+#RewriteCond %{REQUEST_URI} ^/apps/(.*)/(.*)$
+#RewriteCond %{DOCUMENT_ROOT}/apps/apollo-44/public/$1 -f [OR]
+#RewriteCond %{DOCUMENT_ROOT}/apps/apollo-44/public/$1 -d
+#RewriteRule ^(.*)$ /apps/$1/public/$2 [L]
+
+# Handle Authorization Header
+#RewriteCond %{HTTP:Authorization} .
+#RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#
+## Redirect Trailing Slashes If Not A Folder...
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} (.+)/$
+#RewriteRule ^ %1 [L,R=301]
+#
+## Send Requests To Front Controller...
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^ index.php [L]

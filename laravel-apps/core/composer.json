@@ -1,0 +1,19 @@
+{
+    "name": "apps/app1",
+    "require": {
+        "laravel/framework": "^10.0"
+    },
+    "config": {
+        "vendor-dir": "../shared/vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "../shared/vendor/autoload.php"
+        ]
+    }
+}
